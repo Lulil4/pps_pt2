@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Juegos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <strong>¡Jugá por un descuento del 30% sobre el total!</strong>
+  <br>
+  <ion-button [disabled]="intentosTreinta == 0 || sacarBotones" (click)="descuentoTreintaTotal()">Memotest</ion-button>
+  <br>
+  <div>
+    <strong class="result">{{resultTreint}}</strong>
+    <br>
+    <div class="divContainer" *ngIf="resultTreint == '¡ES TU DÍA!'">
+      <div class="divGanaste">
+        <strong class="strongGanador">¡¡¡GANASTE!!!</strong>
+      </div>
+    </div>
+    <strong *ngIf="intentosTreinta != 0">¡Ojo! Intentos: {{intentosTreinta}}</strong>
+  </div>
+  
+  <ion-item-divider></ion-item-divider>
+
+  <strong>¡Jugá por un descuento del 15% sobre el total!</strong>
+  <br>
+  <ion-button [disabled]="intentosQuince == 0 || sacarBotones" (click)="descuentoQuinceTotal()">Ta te ti</ion-button>
+  <br>
+  <div>
+    <strong class="result">{{resultQuince}}</strong>
+    <br>
+    <div class="divContainer" *ngIf="resultQuince == '¡SI!'">
+      <div class="divGanaste">
+        <strong class="strongGanador">¡¡¡GANASTE!!!</strong>
+      </div>
+    </div>
+    <strong *ngIf="intentosQuince != 0">¡Ojo! Intentos: {{intentosQuince}}</strong>
+  </div>
+
+  <ion-item-divider></ion-item-divider>
+
+  <strong>¡Jugá por un descuento del 10% sobre el total!</strong>
+  <br>
+  <ion-button [disabled]="intentosDiez == 0 || sacarBotones" (click)="descuentoDiezTotal()">Adivina el número</ion-button>
+  <br>
+  <div>
+    <strong  class="result">{{resultDiez}}</strong>
+    <br>
+  <div class="divContainer" *ngIf="resultDiez == '¡LO HICISTE!'">
+    <div class="divGanaste">
+      <strong class="strongGanador">¡¡¡GANASTE!!!</strong>
+    </div>
+  </div>
+    <strong *ngIf="intentosDiez != 0">¡Ojo! Intentos: {{intentosDiez}}</strong>
+  </div>
+
+
+  <ion-item-divider></ion-item-divider>
+
+</ion-content>
+
+
+<ion-footer >
+  <ion-toolbar class="footer-toolbar">
+    <ion-button class="btnVolver" (click)="volverAtras()" >
+      Volver al inicio
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
